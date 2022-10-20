@@ -20,6 +20,10 @@ app.get('/category/:id', (req, res) => {
         res.send(cat_news)
     }
 })
+app.get('/all-news', (req, res) => {
+    res.send(news);
+})
+
 app.get('/news/:id', (req, res) => {
     const id = req.params.id;
     const selectedNews = news.find(news => news._id === id)
