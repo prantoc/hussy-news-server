@@ -13,3 +13,5 @@ node_modules/cors/CONTRIBUTING.md
 node_modules/.package-lock.json
 node_modules/.package-lock.json
 node_modules
+
+.vercel
