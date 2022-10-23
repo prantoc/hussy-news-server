@@ -29,8 +29,16 @@ app.get('/news/:id', (req, res) => {
     const selectedNews = news.find(news => news._id === id)
     res.send(selectedNews)
 })
-
-
+// https://openapi.programming-hero.com/api/phones?search=${search ? search : 'apple'}`;
+app.get('/search/:key', (req, res) => {
+    const searchQuery = req.params.key;
+    if (searchQuery != null) {
+        const getData = news.filter(news => news.title.toLowerCase().includes(searchQuery.toLowerCase()) || news.details.toLowerCase().includes(searchQuery.toLowerCase()))
+        res.send(getData)
+    } else {
+        res.end();
+    }
+});
 
 
 app.listen(port, () => {
